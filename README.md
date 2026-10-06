@@ -14,6 +14,8 @@ I want each tool to do one job clearly, explain its limits and be easy to try. T
 
 **All three run offline, use Python 3.11+ and have automated tests.** No account or API key is needed. Downloads are source ZIPs; install Python before running them.
 
+**See them in action:** each release also includes an MP4 demo under **Assets**. These videos replay captured terminal output from real runs with sample data and the test suites; they do not show the desktop interface.
+
 ### Start with JarCheck
 
 My main project focuses on accidental duplicate downloads and archive integrity. It checks files outside the game, so there is no loader-specific installation. It does not decide whether mods are compatible or safe.

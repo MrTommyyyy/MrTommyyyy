@@ -1,6 +1,6 @@
 # Hey, I’m Tommy 👋
 
-I’m interested in building small tools that solve the annoying parts of bigger projects. My projects now include developer tools for configuration checks and project inventories, alongside tools for modded Minecraft.
+I’m interested in building small tools that solve the annoying parts of bigger projects. My projects now include developer tools for configuration checks and project inventories, a Windows cleanup utility, and tools for modded Minecraft.
 
 I want each tool to do one job clearly, explain its limits and be easy to try. These are early projects, and useful feedback is what will shape the next releases.
 
@@ -10,11 +10,14 @@ I want each tool to do one job clearly, explain its limits and be easy to try. T
 | :--- | :--- | :--- |
 | Catch missing configuration keys before starting a project | **[EnvCheck](https://github.com/MrTommyyyy/EnvCheck)** — compare `.env` files against a template; missing, empty and duplicate keys, reports that omit values, CI exit codes | [Latest release](https://github.com/MrTommyyyy/EnvCheck/releases/latest) |
 | Find large files and keep project downloads within a budget | **[RepoLens](https://github.com/MrTommyyyy/RepoLens)** — largest files, extension totals, optional text-line counts, generated-folder exclusions and CI size budgets | [Latest release](https://github.com/MrTommyyyy/RepoLens/releases/latest) |
+| Preview old Windows temporary files and clean up with clear choices | **[TempSweep](https://github.com/MrTommyyyy/TempSweep)** — desktop preview, age filter, optional crash dumps, confirmed file deletion and separate Recycle Bin cleanup | [Latest release](https://github.com/MrTommyyyy/TempSweep/releases/latest) |
 | Find identical mod JARs, remove extra copies and check damaged archives | **[JarCheck](https://github.com/MrTommyyyy/JarCheck)** — desktop window or terminal, duplicate preview, recoverable cleanup, scan progress and JSON reports | [Latest release](https://github.com/MrTommyyyy/JarCheck/releases/latest) |
 | See what changed between two mod folders | **[ModpackCompare](https://github.com/MrTommyyyy/ModpackCompare)** — saved snapshots or live-folder verification; exports a protected difference report | [Latest release](https://github.com/MrTommyyyy/ModpackCompare/releases/latest) |
 | Work out blocks, stacks and shulker space before building | **[BuildBudget](https://github.com/MrTommyyyy/BuildBudget)** — rectangles, grid circles, rings, vertical walls and closed hollow boxes | [Latest release](https://github.com/MrTommyyyy/BuildBudget/releases/latest) |
 
-**All five run offline and have automated tests.** No account or API key is needed. Portable Windows x64 downloads bundle Python; separate source ZIPs support Python 3.11+ on Windows, macOS and Linux.
+**All six run offline and have automated tests.** No account or API key is needed. Portable Windows x64 downloads bundle Python; separate source ZIPs use Python 3.11+. TempSweep’s PC cleanup and Recycle Bin features are Windows only; its disposable demo and core tests also run on macOS and Linux. The other tools support all three platforms from source.
+
+TempSweep previews first and keeps recent files by default. Its confirmed cleanup permanently deletes files; the separate Recycle Bin action applies to all Bin items regardless of age. Review the list before cleaning.
 
 **See the earlier demos:** the previous releases include MP4 videos replaying captured terminal output from real sample runs and tests. They show earlier versions and do not show the desktop interface.
 
@@ -34,6 +37,7 @@ The [README](https://github.com/MrTommyyyy/JarCheck#readme) explains findings an
 
 ### Latest updates
 
+- **TempSweep 0.1.0:** preview old temporary files, confirm checked file-handle deletion, skip changed or busy files, export protected reports and empty the Recycle Bin separately. Includes real Windows interface and filesystem tests.
 - **JarCheck 0.4.0:** preview identical copies, choose a keeper, move extras to recovery and restore them. Actual Tk interface tests run on Windows.
 - **EnvCheck 0.1.0:** configuration checks with values omitted, protected JSON exports and ten automated tests.
 - **RepoLens 0.1.0:** project inventories, optional line counts, size budgets and nine automated tests.
@@ -42,7 +46,7 @@ The [README](https://github.com/MrTommyyyy/JarCheck#readme) explains findings an
 
 ### What I’m focusing on
 
-- **Useful defaults:** read-only checks, clear output, optional JSON for scripts and explicit recovery when files are moved.
+- **Useful defaults:** previews and read-only checks, clear output, protected JSON reports and explicit confirmation or recovery when files are changed.
 - **Reproducible bugs:** small examples and regression tests when something breaks.
 - **Straightforward releases:** versioned downloads, practical instructions and honest limits.
 - **Better usability:** making findings easier to understand and gathering real desktop feedback.
